@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.git
+.github
+.vercel
+docs
+docker
+*.md
+.env
+.env.local
+.env.*.local
+tests
+coverage

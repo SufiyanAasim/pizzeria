@@ -24,6 +24,17 @@ You should receive an acknowledgement within a few days. Confirmed
 issues will be patched and disclosed via the [CHANGELOG](CHANGELOG.md)
 and a GitHub Security Advisory once a fix is available.
 
+## Known accepted risk: ESLint's dependency chain
+
+`npm audit` flags a `minimatch`/`brace-expansion` advisory pulled in
+transitively through `eslint` → `@eslint/config-array`. It's confined
+to `devDependencies` — ESLint runs only at lint time and is never
+part of the shipped app — and the fix requires an ESLint major-version
+bump that changes minimatch's API in a way `@eslint/config-array`
+doesn't yet support upstream. CI (`security.yml`) audits production
+dependencies as a blocking check and dev dependencies as advisory-only
+for this reason.
+
 ## Scope
 
 This project has no authentication, payments, or user accounts — the

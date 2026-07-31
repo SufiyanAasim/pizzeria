@@ -1,4 +1,6 @@
-# PIZZEria
+<p align="center">
+  <img src="assets/brand/logo.svg" alt="PIZZEria" width="360">
+</p>
 
 [![Lint](https://github.com/SufiyanAasim/pizzeria/actions/workflows/lint.yml/badge.svg)](.github/workflows/lint.yml)
 [![Build](https://github.com/SufiyanAasim/pizzeria/actions/workflows/build.yml/badge.svg)](.github/workflows/build.yml)

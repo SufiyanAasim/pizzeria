@@ -18,4 +18,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm audit --audit-level=high
+      - name: Audit production dependencies (blocking)
+        run: npm audit --omit=dev --audit-level=high
+      - name: Audit dev dependencies (advisory only)
+        run: npm audit --audit-level=high
+        continue-on-error: true

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="560" height="160" role="img" aria-labelledby="pizzeria-logo-title">
+  <title id="pizzeria-logo-title">PIZZEria</title>
+  <defs>
+    <style>
+      .word {
+        font-family: Georgia, "Times New Roman", "Noto Serif", serif;
+        font-weight: 700;
+        font-size: 104px;
+      }
+    </style>
+  </defs>
+
+  <!-- gold offset shadow layer -->
+  <text x="34" y="112" class="word" fill="#dba233">PIZZ<tspan font-style="italic" font-weight="600">E</tspan>ria</text>
+  <!-- tomato face layer -->
+  <text x="28" y="106" class="word" fill="#c8402c">PIZZ<tspan font-style="italic" font-weight="600">E</tspan>ria</text>
+</svg>
