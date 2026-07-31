@@ -4,8 +4,8 @@
 
 | Version | Supported |
 | ------- | --------- |
-| 1.x     | ✅        |
-| < 1.0   | ❌        |
+| 4.x     | ✅        |
+| < 4.0   | ❌        |
 
 ## Reporting a vulnerability
 
@@ -37,9 +37,19 @@ for this reason.
 
 ## Scope
 
-This project has no authentication, payments, or user accounts — the
-main surface area is the optional Turso database connection and the
-order-request form (which only opens a `mailto:` link; no data is
-transmitted to a backend). Secrets (`TURSO_DATABASE_URL`,
-`TURSO_AUTH_TOKEN`) must never be committed; use `.env.local`, which is
-git-ignored, or your deployment platform's environment variable store.
+Customers never authenticate and no payments are handled — order and
+reservation forms only open a `mailto:` link, and no data is
+transmitted to or stored by the app on that path.
+
+The one authenticated surface is the admin panel at `/admin`, gated by
+a single shared password (`ADMIN_PASSWORD`) — see
+`docs/architecture/Architecture.md`. This is deliberately simple (one
+role, one password, no user management) and is not intended to scale
+to a team; if that changes, replace `src/lib/admin-auth.ts` with a
+real auth provider rather than extending the shared-password model.
+
+Secrets (`TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `ADMIN_PASSWORD`)
+must never be committed; use `.env.local`, which is git-ignored, or
+your deployment platform's environment variable store. Use a long,
+random `ADMIN_PASSWORD` you don't reuse elsewhere — it is compared in
+plaintext against the request body over HTTPS, not hashed at rest.

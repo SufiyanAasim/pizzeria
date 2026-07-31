@@ -6,7 +6,7 @@
 [![Build](https://github.com/SufiyanAasim/pizzeria/actions/workflows/build.yml/badge.svg)](.github/workflows/build.yml)
 [![Test](https://github.com/SufiyanAasim/pizzeria/actions/workflows/test.yml/badge.svg)](.github/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-4.0.0--Crust-d1502f)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-4.1.0-d1502f)](CHANGELOG.md)
 
 A wood-fired kitchen showcase — pizza, pasta, ramen, sides, dessert,
 and drinks — built with Next.js, Tailwind, GSAP, and Framer Motion.
@@ -33,6 +33,8 @@ kitchen's full range rather than just pizza.
   gallery (`/gallery`)
 - Multiple locations (`/locations`) with an active-location-aware
   footer
+- Password-gated admin panel (`/admin`) to add/edit/delete categories
+  and menu items, live against the Turso database
 
 ## Screenshots
 
@@ -86,6 +88,7 @@ See [docs/development/Configuration.md](docs/development/Configuration.md).
 | --------------------- | -------- | ------- | -------------------------------------- |
 | `TURSO_DATABASE_URL`   | No       | —       | Turso connection URL — omit for static menu |
 | `TURSO_AUTH_TOKEN`     | No       | —       | Turso auth token                       |
+| `ADMIN_PASSWORD`       | No       | —       | Enables `/admin` (menu editing)        |
 
 ## Running locally
 

@@ -8,8 +8,28 @@ pieces fit together.
 
 ### Add or edit a menu item
 
-Edit `src/lib/menu-data.ts`. If you're using Turso, re-run
-`npm run db:seed` afterward to sync it.
+Two ways, depending on whether Turso is configured:
+
+- **No database:** edit `src/lib/menu-data.ts` directly — it's the
+  static source of truth.
+- **With Turso:** use `/admin` (set `ADMIN_PASSWORD` first) instead of
+  editing the database by hand — it writes through the same schema
+  `scripts/seed.ts` uses. Editing `menu-data.ts` won't affect a live
+  Turso-backed site; that file only seeds the initial data and serves
+  as the fallback when no database is configured.
+
+### Test the admin panel locally
+
+```bash
+# .env.local
+TURSO_DATABASE_URL=...
+TURSO_AUTH_TOKEN=...
+ADMIN_PASSWORD=some-long-random-value
+```
+
+Run `npm run db:seed` once to create the tables, then visit
+`/admin/login`. See `docs/api/API.md` for the underlying routes and
+`docs/architecture/Architecture.md` for how the session cookie works.
 
 ### Add a new page
 

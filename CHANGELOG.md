@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.0] - 2026-07-31
+
+### Added
+
+- Password-gated admin panel (`/admin`) to add/edit/delete categories
+  and menu items, live against the Turso database (`ADMIN_PASSWORD`
+  env var; see `docs/api/API.md` for the `/api/admin/*` routes and
+  `docs/architecture/Architecture.md` for the auth model).
+- "Admin" login entry in the header — desktop (subtle, next to the
+  cart icon) and in the mobile hamburger menu, kept visually separate
+  from customer-facing nav.
+- Illustrated category icon on every menu card (matches the `/gallery`
+  motif), not just in the gallery.
+- GSAP-driven category marquee on the homepage, linking into `/menu`
+  pre-filtered to that category (`/menu?cat=<slug>`).
+- Restructured footer: brand column, Explore/Visit link columns, and
+  the active location's address/hours/phone.
+
+### Changed
+
+- `/menu` now reads a `?cat=` query param to open on a specific
+  category (used by the new homepage marquee).
+
+### Documentation
+
+- `docs/api/API.md` now documents the `/api/admin/*` routes (previously
+  said the site had no API routes at all).
+
 ## [4.0.0] - 2026-07-31
 
 ### Added
@@ -94,7 +122,8 @@ relevant if you were building the image directly.
 - Governance files: `CONTRIBUTING.md`, `SECURITY.md`,
   `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `RELEASE.md`, `ROADMAP.md`.
 
-[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/SufiyanAasim/pizzeria/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v1.0.0...v2.0.0

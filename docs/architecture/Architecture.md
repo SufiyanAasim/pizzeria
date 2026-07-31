@@ -54,11 +54,19 @@ added.
   level in `globals.css`, and the GSAP float loop is skipped entirely
   when the media query matches).
 
-## No authentication / no authorization
+## Authentication scope
 
-There are no user accounts, sessions, or admin roles in this build.
-The order form (`/contact`) opens a pre-filled `mailto:` link — no
-data is transmitted to or stored by the app.
+Customers never authenticate — there are no accounts. The order form
+(`/contact`) and checkout (`/checkout`) open a pre-filled `mailto:`
+link; no data is transmitted to or stored by the app on that path.
+
+The **admin panel** (`/admin`) is the one authenticated surface: a
+single shared password (`ADMIN_PASSWORD`) gates an HMAC-signed session
+cookie (`src/lib/admin-auth.ts`), checked in a layout for pages
+(`src/app/admin/(protected)/layout.tsx`) and per-request for API
+routes (`src/app/api/admin/**`). There's one role — admin — not a
+multi-user permission system; see `docs/api/API.md` for the routes it
+exposes.
 
 ## Directory map
 

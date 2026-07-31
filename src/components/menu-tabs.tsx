@@ -5,8 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import MenuGrid from "@/components/menu-grid";
 import type { MenuCategory } from "@/lib/menu-data";
 
-export default function MenuTabs({ categories }: { categories: MenuCategory[] }) {
-  const [active, setActive] = useState(categories[0]?.slug);
+export default function MenuTabs({
+  categories,
+  initialSlug,
+}: {
+  categories: MenuCategory[];
+  initialSlug?: string;
+}) {
+  const [active, setActive] = useState(
+    categories.find((c) => c.slug === initialSlug)?.slug ?? categories[0]?.slug
+  );
   const activeCategory = categories.find((c) => c.slug === active) ?? categories[0];
   const total = categories.reduce((n, c) => n + c.items.length, 0);
 

@@ -7,8 +7,13 @@ export const metadata: Metadata = {
   description: "Pizza, pasta, ramen, sides, dessert, and drinks from the PIZZEria wood-fired kitchen.",
 };
 
-export default async function MenuPage() {
+export default async function MenuPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cat?: string }>;
+}) {
   const menu = await getMenu();
+  const { cat } = await searchParams;
 
   return (
     <section className="px-5 py-20 md:px-8 md:py-28">
@@ -21,7 +26,7 @@ export default async function MenuPage() {
             The Full Line-Up
           </h1>
         </div>
-        <MenuTabs categories={menu} />
+        <MenuTabs categories={menu} initialSlug={cat} />
       </div>
     </section>
   );

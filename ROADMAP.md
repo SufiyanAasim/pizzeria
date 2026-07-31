@@ -28,15 +28,22 @@ without touching the database directly.
 - Performance pass: `CartDrawer` and `ToppingPicker` deferred via
   `next/dynamic`.
 
+## v4.1.0 ✅ shipped
+
+- Admin panel (`/admin`) for category/item CRUD — closes the item
+  deferred from v2.0.0.
+- Category icons on menu cards, homepage category marquee, footer
+  redesign.
+
 ## What's next
 
 All four originally planned releases (Leaven → Knead → Proof → Crust)
-have shipped. Candidates for a v4.1+ or v5.0.0, not yet scheduled:
+have shipped, plus the v4.1.0 admin update. Not yet scheduled:
 
 - Wire `/contact`'s hours to the active location.
 - Per-location menu/pricing, if locations ever actually differ.
-- Admin view for editing menu items without touching the database
-  directly (deferred from v2.0.0).
+- Per-item image upload in the admin panel (needs a storage story
+  first — see `docs/releases/v4.1.0.md`).
 - Real dish photography to replace the `/gallery` illustrations.
 
 ## Not planned

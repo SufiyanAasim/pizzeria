@@ -16,6 +16,7 @@ for a Next.js App Router project.
    | --------------------- | -------- | -------------------------------- |
    | `TURSO_DATABASE_URL`   | No       | Turso database connection URL    |
    | `TURSO_AUTH_TOKEN`     | No       | Turso auth token                 |
+   | `ADMIN_PASSWORD`       | No       | Enables `/admin` menu editing    |
 
 4. Deploy. Every push to `main` deploys to production; every other
    branch/PR gets a preview deployment.

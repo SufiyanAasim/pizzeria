@@ -1,27 +1,53 @@
 # API
 
-PIZZEria has **no HTTP API routes**, even after the v2.0.0 order
-builder. All data access happens server-side inside React Server
-Components via `src/lib/get-menu.ts`, which is not exposed as an
-endpoint.
+Customer-facing pages have no HTTP API — cart, checkout, and
+reservations all run client-side or via `mailto:` (see
+`docs/architecture/Architecture.md`).
 
-## Cart and checkout (v2.0.0+)
+The admin panel (`/admin`, added post-v4.0.0) does have a small,
+**admin-only** API under `/api/admin/*`. Every route requires the
+`pizzeria_admin_session` cookie set by `/api/admin/login`; without it,
+every route below returns `401`. Without `TURSO_DATABASE_URL`
+configured, write routes return `503`.
 
-The cart (`src/lib/cart-context.tsx`) lives entirely client-side in
-`localStorage` — there is no server-side cart state. `/checkout`
-(`src/components/checkout-view.tsx`) builds an itemized summary and
-opens a pre-filled `mailto:` link; no request ever leaves the browser
-and no payment information is collected anywhere.
+## `POST /api/admin/login`
 
-## Planned
+**Auth:** none (this is how you get one)
+**Body:** `{ "password": string }`
+**Response:** `200 { ok: true }` and sets the session cookie, or
+`401 { error }` on a wrong password, or `503` if `ADMIN_PASSWORD`
+isn't set.
 
-A real `/api/order` route (or a hosted form provider) remains a
-future option if the project moves toward accepting orders without a
-human reading email — not committed to any specific version yet. When
-added, this document will cover:
+## `POST /api/admin/logout`
 
-- Endpoint, method, and authentication (if any)
-- Request/response shape
-- Status codes and error format
+Clears the session cookie. Always `200 { ok: true }`.
 
-Until then, there is nothing else to document here.
+## `POST /api/admin/categories`
+
+**Body:** `{ "name": string }` — slug is derived from the name.
+**Response:** `201 { ok: true, slug }`, `409` if the slug already
+exists, `400` on a missing/empty name.
+
+## `DELETE /api/admin/categories/:slug`
+
+Deletes the category **and every item in it**. `200 { ok: true }`.
+
+## `POST /api/admin/items`
+
+**Body:** `{ categorySlug, name, description, priceCents }` — all
+required, `priceCents` must be a positive integer.
+**Response:** `201 { ok: true, item }`.
+
+## `PUT /api/admin/items/:id`
+
+**Body:** `{ name, description, priceCents }`.
+**Response:** `200 { ok: true }`.
+
+## `DELETE /api/admin/items/:id`
+
+**Response:** `200 { ok: true }`.
+
+## Error shape
+
+Every error response is `{ "error": string }` with an appropriate
+HTTP status (`400`, `401`, `409`, or `503`).
