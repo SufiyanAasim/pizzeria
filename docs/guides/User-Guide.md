@@ -17,6 +17,10 @@ up for.
 - **Order (`/contact`)** — fill in your name, party size, and what
   you're after; submitting opens your device's mail app with the
   message pre-filled, ready to send to the restaurant.
+- **Gallery (`/gallery`)** — every dish across all six categories,
+  illustrated (real photography still pending).
+- **Reserve (`/reserve`)** — request a table by date, time, and party
+  size; opens your mail app the same way checkout does.
 - **Credits (`/credits`)** — who built the site and what it's built
   with.
 

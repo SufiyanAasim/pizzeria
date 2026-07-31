@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-07-31
+
+### Added
+
+- `/reserve` — table reservation request form (name, date, time,
+  party size, notes), sent via `mailto:` like the order flow.
+- `/gallery` — every menu item across all six categories, illustrated
+  (real photography not shot yet — see `assets/README.md`).
+
+### Changed
+
+- Header nav's Reserve and Gallery links are now live.
+
 ## [2.0.0] - 2026-07-31
 
 ### Added
@@ -61,6 +74,7 @@ relevant if you were building the image directly.
 - Governance files: `CONTRIBUTING.md`, `SECURITY.md`,
   `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `RELEASE.md`, `ROADMAP.md`.
 
-[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/SufiyanAasim/pizzeria/releases/tag/v1.0.0

@@ -15,13 +15,14 @@ form, and credits, with an optional Turso-backed menu.
 Deferred to a later release: an admin view for editing menu items
 without touching the database directly.
 
-## v3.0.0 — Proof (current)
+## v3.0.0 — Proof ✅ shipped
 
-- Reservation/table-booking flow.
-- Image gallery for dishes (see `assets/README.md` for the shot list;
-  ships with illustrated placeholders until real photography exists).
+- Reservation/table-booking flow (`/reserve`).
+- Image gallery for dishes (`/gallery`), shipped with illustrated
+  placeholders — see `assets/README.md` for the real-photography shot
+  list this is waiting on.
 
-## v4.0.0 — Crust
+## v4.0.0 — Crust (current)
 
 - Multi-location support.
 - Performance pass: dynamic-imported heavy client components, lazy
