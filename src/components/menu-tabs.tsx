@@ -43,7 +43,10 @@ export default function MenuTabs({ categories }: { categories: MenuCategory[] })
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
         >
-          <MenuGrid items={activeCategory?.items ?? []} />
+          <MenuGrid
+            items={activeCategory?.items ?? []}
+            categorySlug={activeCategory?.slug}
+          />
         </motion.div>
       </AnimatePresence>
     </div>

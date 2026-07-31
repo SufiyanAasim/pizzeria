@@ -44,7 +44,7 @@ export default async function Home() {
                 Full Menu &rarr;
               </Link>
             </div>
-            <MenuGrid items={featured} />
+            <MenuGrid items={featured} categorySlug="pizza" />
           </div>
         </section>
       </ShutterReveal>

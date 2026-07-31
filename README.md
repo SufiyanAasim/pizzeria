@@ -6,7 +6,7 @@
 [![Build](https://github.com/SufiyanAasim/pizzeria/actions/workflows/build.yml/badge.svg)](.github/workflows/build.yml)
 [![Test](https://github.com/SufiyanAasim/pizzeria/actions/workflows/test.yml/badge.svg)](.github/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0--Leaven-d1502f)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.0--Knead-d1502f)](CHANGELOG.md)
 
 A wood-fired kitchen showcase — pizza, pasta, ramen, sides, dessert,
 and drinks — built with Next.js, Tailwind, GSAP, and Framer Motion.
@@ -27,7 +27,8 @@ kitchen's full range rather than just pizza.
 - Category-tabbed menu: Pizza, Pasta, Ramen, Sides, Dessert, Drinks
 - Fully responsive — same codebase serves mobile and desktop
 - Zero-config static menu, with an optional Turso/Drizzle database
-- Order form that opens a pre-filled email — no backend required
+- Order builder: pizza topping picker, persistent cart, checkout flow
+  that sends the order via a pre-filled email — no backend required
 
 ## Screenshots
 
@@ -108,8 +109,8 @@ Deploys to Vercel with zero configuration. See
 
 ## API documentation
 
-See [docs/api/API.md](docs/api/API.md) — v1.0.0 has no HTTP API
-surface.
+See [docs/api/API.md](docs/api/API.md) — there is still no HTTP API
+surface; the cart and checkout run entirely client-side.
 
 ## Project structure
 
