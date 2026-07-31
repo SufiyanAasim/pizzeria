@@ -6,7 +6,7 @@
 [![Build](https://github.com/SufiyanAasim/pizzeria/actions/workflows/build.yml/badge.svg)](.github/workflows/build.yml)
 [![Test](https://github.com/SufiyanAasim/pizzeria/actions/workflows/test.yml/badge.svg)](.github/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-3.0.0--Proof-d1502f)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-4.0.0--Crust-d1502f)](CHANGELOG.md)
 
 A wood-fired kitchen showcase — pizza, pasta, ramen, sides, dessert,
 and drinks — built with Next.js, Tailwind, GSAP, and Framer Motion.
@@ -31,6 +31,8 @@ kitchen's full range rather than just pizza.
   that sends the order via a pre-filled email — no backend required
 - Table reservation request (`/reserve`) and a full illustrated menu
   gallery (`/gallery`)
+- Multiple locations (`/locations`) with an active-location-aware
+  footer
 
 ## Screenshots
 

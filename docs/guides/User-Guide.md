@@ -21,6 +21,8 @@ up for.
   illustrated (real photography still pending).
 - **Reserve (`/reserve`)** — request a table by date, time, and party
   size; opens your mail app the same way checkout does.
+- **Locations (`/locations`)** — pick your nearest location; the
+  footer (and this page) then show its address and hours.
 - **Credits (`/credits`)** — who built the site and what it's built
   with.
 

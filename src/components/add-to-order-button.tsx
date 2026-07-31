@@ -1,9 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import ToppingPicker from "@/components/topping-picker";
+import dynamic from "next/dynamic";
 import { useCart } from "@/lib/cart-context";
 import type { MenuItem } from "@/lib/menu-data";
+
+// Deferred: most menu items aren't pizza, and even pizza items don't
+// need the picker's JS until "Build & Add" is actually clicked.
+const ToppingPicker = dynamic(() => import("@/components/topping-picker"), {
+  ssr: false,
+});
 
 export default function AddToOrderButton({
   item,
@@ -14,6 +20,7 @@ export default function AddToOrderButton({
 }) {
   const { addLine } = useCart();
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [pickerTouched, setPickerTouched] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
   const isPizza = categorySlug === "pizza";
 
@@ -24,6 +31,7 @@ export default function AddToOrderButton({
 
   function handleClick() {
     if (isPizza) {
+      setPickerTouched(true);
       setPickerOpen(true);
       return;
     }
@@ -58,7 +66,7 @@ export default function AddToOrderButton({
       >
         {justAdded ? "Added ✓" : isPizza ? "Build & Add" : "Add to Order"}
       </button>
-      {isPizza && (
+      {isPizza && pickerTouched && (
         <ToppingPicker
           itemName={item.name}
           open={pickerOpen}

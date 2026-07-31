@@ -1,11 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import CartDrawer from "@/components/cart-drawer";
 import { useCart } from "@/lib/cart-context";
+
+// Deferred: only needed once a visitor actually opens the cart, so it
+// doesn't add to the JS every page load has to parse up front.
+const CartDrawer = dynamic(() => import("@/components/cart-drawer"), {
+  ssr: false,
+});
 
 const NAV_LINKS = [
   { href: "/menu", label: "Menu" },
@@ -19,6 +25,7 @@ const NAV_LINKS = [
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [cartTouched, setCartTouched] = useState(false);
   const { itemCount } = useCart();
 
   return (
@@ -44,7 +51,10 @@ export default function SiteHeader() {
           <button
             type="button"
             aria-label="Open cart"
-            onClick={() => setCartOpen(true)}
+            onClick={() => {
+              setCartTouched(true);
+              setCartOpen(true);
+            }}
             className="relative flex h-10 w-10 items-center justify-center border border-line text-cream hover:border-tomato"
           >
             <ShoppingBag size={17} />
@@ -92,7 +102,9 @@ export default function SiteHeader() {
         )}
       </AnimatePresence>
 
-      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+      {cartTouched && (
+        <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+      )}
     </header>
   );
 }

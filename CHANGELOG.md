@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.0] - 2026-07-31
+
+### Added
+
+- `/locations` — multiple locations with address, phone, and hours;
+  visitors can set an active location, persisted in `localStorage`.
+- Footer now shows the active location's name, address, and hours
+  instead of one hardcoded set.
+
+### Changed
+
+- `CartDrawer` and `ToppingPicker` are now `next/dynamic` imports with
+  `ssr: false`, loaded only once a visitor actually opens the cart or
+  the pizza topping picker, rather than being part of every page's
+  initial JS.
+
+### Breaking changes
+
+None.
+
 ## [3.0.0] - 2026-07-31
 
 ### Added
@@ -74,7 +94,8 @@ relevant if you were building the image directly.
 - Governance files: `CONTRIBUTING.md`, `SECURITY.md`,
   `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `RELEASE.md`, `ROADMAP.md`.
 
-[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/SufiyanAasim/pizzeria/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/SufiyanAasim/pizzeria/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/SufiyanAasim/pizzeria/releases/tag/v1.0.0

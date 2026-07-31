@@ -22,11 +22,22 @@ without touching the database directly.
   placeholders — see `assets/README.md` for the real-photography shot
   list this is waiting on.
 
-## v4.0.0 — Crust (current)
+## v4.0.0 — Crust ✅ shipped
 
-- Multi-location support.
-- Performance pass: dynamic-imported heavy client components, lazy
-  loading, bundle audit.
+- Multi-location support (`/locations`, active-location-aware footer).
+- Performance pass: `CartDrawer` and `ToppingPicker` deferred via
+  `next/dynamic`.
+
+## What's next
+
+All four originally planned releases (Leaven → Knead → Proof → Crust)
+have shipped. Candidates for a v4.1+ or v5.0.0, not yet scheduled:
+
+- Wire `/contact`'s hours to the active location.
+- Per-location menu/pricing, if locations ever actually differ.
+- Admin view for editing menu items without touching the database
+  directly (deferred from v2.0.0).
+- Real dish photography to replace the `/gallery` illustrations.
 
 ## Not planned
 
