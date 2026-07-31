@@ -1,0 +1,25 @@
+name: Deploy
+
+# Vercel's native GitHub integration already deploys on every push to
+# `main` and on every PR (as a preview) once this repo is imported into
+# a Vercel project — no workflow is required for that.
+#
+# This workflow is a manual-only fallback for deploying via the Vercel
+# CLI (e.g. from a non-Vercel CI runner). It does nothing until you add
+# VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID as repository
+# secrets and trigger it by hand.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.ENABLE_MANUAL_DEPLOY == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Vercel
+        run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

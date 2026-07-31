@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Torrefatto — the committed brand identity (dark industrial shell, trattoria warmth). */
+:root {
+  --bg: #100d0a;
+  --surface: #1b1611;
+  --surface-2: #211a14;
+  --line: #332a20;
+  --gold: #dba233;
+  --tomato: #d1502f;
+  --tomato-2: #f2926b;
+  --cream: #f2e9d8;
+  --steel: #9c8f7c;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-gold: var(--gold);
+  --color-tomato: var(--tomato);
+  --color-tomato-2: var(--tomato-2);
+  --color-cream: var(--cream);
+  --color-steel: var(--steel);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

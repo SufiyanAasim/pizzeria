@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "pizza",
+    "name": "Pizza",
+    "items": [
+      {
+        "name": "Margherita",
+        "description": "San Marzano, basil, 24-mo parmesan",
+        "priceCents": 1600
+      }
+    ]
+  }
+]
