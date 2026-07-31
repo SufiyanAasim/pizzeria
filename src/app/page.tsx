@@ -2,6 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/hero";
 import ShutterReveal from "@/components/shutter-reveal";
 import MenuGrid from "@/components/menu-grid";
+import CategoryMarquee from "@/components/category-marquee";
 import { getMenu } from "@/lib/get-menu";
 
 export default async function Home() {
@@ -11,6 +12,8 @@ export default async function Home() {
   return (
     <>
       <Hero />
+
+      <CategoryMarquee categories={menu} />
 
       <ShutterReveal>
         <section className="border-t border-line bg-surface px-5 py-20 md:px-8 md:py-28">

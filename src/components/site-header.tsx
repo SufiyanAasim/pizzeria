@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X, ShoppingBag, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/lib/cart-context";
 
@@ -48,6 +48,15 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link
+            href="/admin"
+            aria-label="Staff admin login"
+            className="hidden items-center gap-1.5 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel/70 transition-colors hover:text-tomato-2 lg:flex"
+          >
+            <Lock size={12} />
+            Admin
+          </Link>
+
           <button
             type="button"
             aria-label="Open cart"
@@ -97,6 +106,14 @@ export default function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/admin"
+                onClick={() => setOpen(false)}
+                className="mt-3 flex items-center gap-2 pt-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-steel/70 hover:text-tomato-2"
+              >
+                <Lock size={12} />
+                Staff Admin Login
+              </Link>
             </div>
           </motion.nav>
         )}

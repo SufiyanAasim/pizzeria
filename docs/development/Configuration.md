@@ -6,6 +6,7 @@
 | --------------------- | -------- | ------- | ------------------------------------------------------------------ |
 | `TURSO_DATABASE_URL`   | No       | —       | Turso/libSQL connection URL. Omit to use the static menu.          |
 | `TURSO_AUTH_TOKEN`     | No       | —       | Turso auth token, required alongside `TURSO_DATABASE_URL`.         |
+| `ADMIN_PASSWORD`       | No       | —       | Enables `/admin`. Needs `TURSO_DATABASE_URL` set too to be useful. |
 
 Copy `.env.example` to `.env.local` and fill in values only if you
 want a live database. `.env.local` is git-ignored.

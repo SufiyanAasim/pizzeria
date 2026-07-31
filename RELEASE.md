@@ -11,8 +11,8 @@ This project uses [Semantic Versioning](https://semver.org/):
 
 ## Codenames
 
-Releases are codenamed after stages of dough preparation (Italian
-culinary / dough-making theme), one category only:
+Releases v1.0.0–v4.0.0 are codenamed after stages of dough preparation
+(Italian culinary / dough-making theme):
 
 | Version | Codename | Meaning                        |
 | ------- | -------- | ------------------------------- |
@@ -20,6 +20,14 @@ culinary / dough-making theme), one category only:
 | v2.0.0  | Knead    | Working the dough into shape    |
 | v3.0.0  | Proof    | Letting it rise before the bake |
 | v4.0.0  | Crust    | The finished, baked result      |
+
+Starting at v5.0.0 the theme moves to toppings — the dough-prep arc
+(Leaven → Crust) was complete at v4.0.0, and everything after is about
+what goes *on* the pizza, not how it's made:
+
+| Version | Codename | Meaning                          |
+| ------- | -------- | ---------------------------------- |
+| v5.0.0  | Olive    | First of the topping-era releases  |
 
 ## Release cycle
 

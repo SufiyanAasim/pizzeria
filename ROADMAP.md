@@ -28,15 +28,24 @@ without touching the database directly.
 - Performance pass: `CartDrawer` and `ToppingPicker` deferred via
   `next/dynamic`.
 
+## v5.0.0 — Olive ✅ shipped
+
+- Admin panel (`/admin`) for category/item CRUD — closes the item
+  deferred from v2.0.0.
+- Category icons on menu cards, homepage category marquee, footer
+  redesign.
+
+Codename theme switches to toppings starting here — see `RELEASE.md`.
+
 ## What's next
 
 All four originally planned releases (Leaven → Knead → Proof → Crust)
-have shipped. Candidates for a v4.1+ or v5.0.0, not yet scheduled:
+have shipped, plus v5.0.0 — Olive. Not yet scheduled:
 
 - Wire `/contact`'s hours to the active location.
 - Per-location menu/pricing, if locations ever actually differ.
-- Admin view for editing menu items without touching the database
-  directly (deferred from v2.0.0).
+- Per-item image upload in the admin panel (needs a storage story
+  first — see `docs/releases/v5.0.0-Olive.md`).
 - Real dish photography to replace the `/gallery` illustrations.
 
 ## Not planned
